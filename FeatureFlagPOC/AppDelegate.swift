@@ -15,10 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-//        FeatureFlagManager.firstTimeConfigure()
-
         return true
     }
 
@@ -46,3 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension UIApplication {
+    static func appBuild() -> Int {
+        return Int(Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String)!
+    }
+}

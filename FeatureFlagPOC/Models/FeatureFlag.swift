@@ -27,7 +27,9 @@ struct FeatureFlag: Codable {
         guard let dictionary = dictionary,
             let iosDictionary = dictionary["iOS"] as? [String: Any],
             let activated = iosDictionary[FFKeys.activated] as? Bool,
-            let minimumVersion = iosDictionary[FFKeys.minimumVersion] as? Int else { return nil }
+            let minimumVersion = iosDictionary[FFKeys.minimumVersion] as? Int else {
+                return nil
+        }
         let description = dictionary["description"] as? String
 
         self.description = description

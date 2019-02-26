@@ -57,7 +57,8 @@ enum FeatureFlagManager {
             var featureFlags = [String: FeatureFlag]()
             for document in document.documents {
                 let name = document.documentID
-                guard let flag = FeatureFlag(document.data()) else { continue }
+                guard let flag = FeatureFlag(document.data()),
+                flag.minimumVersion < UIApplication.appBuild() else { continue }
 
                 featureFlags[name] = flag
             }
