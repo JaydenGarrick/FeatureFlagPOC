@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lwD-1n-WSq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Feature Flags-->
+        <scene sceneID="ZSn-Ir-HIJ">
+            <objects>
+                <tableViewController id="xOF-U5-LoH" customClass="SFDebugFeatureFlagTableViewController" customModule="FeatureFlagPOC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nH1-o2-xzm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="xOF-U5-LoH" id="fuP-YZ-5Q4"/>
+                            <outlet property="delegate" destination="xOF-U5-LoH" id="QMj-Q3-6uK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Feature Flags" id="xyk-PY-Ky7">
+                        <barButtonItem key="leftBarButtonItem" title="Dismiss" id="yGw-aJ-oUK">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="xOF-U5-LoH" id="rRd-vD-eEW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="lUY-ct-Mns">
+                            <connections>
+                                <action selector="syncWithServerButtonTapped:" destination="xOF-U5-LoH" id="lCh-73-9vi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DUk-W7-8vW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="367.19999999999999" y="-420.53973013493254"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NrN-Ho-OjT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lwD-1n-WSq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0AF-uZ-IQe">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xOF-U5-LoH" kind="relationship" relationship="rootViewController" id="QSa-U5-GJ0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JsZ-Ny-R2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-572" y="-420.53973013493254"/>
+        </scene>
+    </scenes>
+</document>
